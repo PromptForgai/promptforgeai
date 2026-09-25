@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Payment — PromptForge AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #121826;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --success: #10b981;
+      --border: #1e293b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 40px 32px;
+      max-width: 480px;
+      width: 100%;
+      border: 1px solid var(--border);
+    }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 20px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    input, select {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #0f172a;
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus {
+      border-color: var(--primary);
+    }
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: var(--primary-hover);
+    }
+    .note {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .note a {
+      color: #22d3ee;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="success-icon">✓</div>
+    <h1>Payment Confirmation</h1>
+    <p class="subtitle">
+      After paying with NOWPayments, fill this form.<br>
+      You will receive your pack by email within a few hours.
+    </p>
+
+    <form action="https://formsubmit.co/Promptforgai@gmail.com" method="POST">
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_subject" value="New PromptForge Order - Payment Confirmation">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://promptforgeai.promptforgeai.workers.dev/after-payment-success.html">
+
+      <label for="email">Your email address *</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com">
+
+      <label for="pack">Which pack did you buy? *</label>
+      <select id="pack" name="pack" required>
+        <option value="">— Select —</option>
+        <option value="Starter Pack (15 USDT)">Starter Pack (15 USDT)</option>
+        <option value="Pro Pack (39 USDT)">Pro Pack (39 USDT)</option>
+        <option value="Agency Pack (79 USDT)">Agency Pack (79 USDT)</option>
+      </select>
+
+      <label for="txhash">Transaction hash / Payment ID *</label>
+      <input type="text" id="txhash" name="transaction_hash" required placeholder="Paste the transaction hash or payment ID">
+
+      <label for="message">Additional message (optional)</label>
+      <input type="text" id="message" name="message" placeholder="Any extra info...">
+
+      <button type="submit" class="btn">Submit & Receive my pack by email</button>
+    </form>
+
+    <div class="note">
+      We will verify your payment and send the PDF to your email.<br>
+      Average delivery time: a few hours.<br><br>
+      <a href="index.html">← Back to homepage</a>
+    </div>
+  </div>
+</body>
+</html>
