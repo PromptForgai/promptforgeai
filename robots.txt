@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://promptforgeai.promptforgeai.workers.dev/sitemap.xml
